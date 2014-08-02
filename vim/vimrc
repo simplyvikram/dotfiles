@@ -35,6 +35,7 @@ Bundle "scrooloose/nerdcommenter"
 Bundle "altercation/vim-colors-solarized"
 Bundle "kien/ctrlp.vim"
 Bundle "fatih/vim-go"
+Bundle "Valloric/YouCompleteMe"
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -56,5 +57,19 @@ set tabstop=4
 set shiftwidth=4
 set expandtab
 
+set hlsearch
+set incsearch
+set autoread
+set hidden
+
 set autoindent
 filetype plugin indent on
+filetype plugin on
+
+
+inoremap '' ''<esc>i
+inoremap "" ""<esc>i
+inoremap () ()<esc>i
+inoremap [] []<esc>i
+inoremap {} {}<esc>i
+inoremap <> <><esc>i
