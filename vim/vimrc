@@ -28,16 +28,18 @@ Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
 "Plugin 'user/L9', {'name': 'newL9'}
 
 "----------CUSTOM PLUGINS
-Bundle "morhetz/gruvbox"
-Bundle "Yggdroot/indentLine"
-Bundle "scrooloose/nerdtree"
-Bundle "scrooloose/nerdcommenter"
-Bundle "altercation/vim-colors-solarized"
-Bundle "kien/ctrlp.vim"
-Bundle "fatih/vim-go"
-Bundle "Valloric/YouCompleteMe"
-Bundle "ervandew/supertab"
+Plugin 'morhetz/gruvbox'
+Plugin 'Yggdroot/indentLine'
+Plugin 'scrooloose/nerdtree'
+Plugin 'scrooloose/nerdcommenter'
+Plugin 'altercation/vim-colors-solarized'
+Plugin 'kien/ctrlp.vim'
+Plugin 'fatih/vim-go'
+Plugin 'Valloric/YouCompleteMe'
+Plugin 'ervandew/supertab'
+Plugin 'dkprice/vim-easygrep'
 " All of your Plugins must be added before the following line
+
 call vundle#end()            " required
 filetype plugin indent on    " required
 " To ignore plugin indent changes, instead use:
@@ -51,8 +53,6 @@ filetype plugin indent on    " required
 "
 " see :h vundle for more details or wiki for FAQ
 " Put your non-Plugin stuff after this line
-
-
 
 set tabstop=4
 set shiftwidth=4
@@ -70,6 +70,7 @@ filetype plugin on
 
 inoremap '' ''<esc>i
 inoremap "" ""<esc>i
+inoremap `` ``<esc>i
 inoremap () ()<esc>i
 inoremap [] []<esc>i
 inoremap {} {}<esc>i
@@ -107,3 +108,12 @@ inoremap <C-k> <ESC>:m .-2<CR>==gi
 " Visual mode
 vnoremap <C-j> :m '>+1<CR>gv=gv
 vnoremap <C-k> :m '<-2<CR>gv=gv
+
+set nobackup
+set noswapfile
+
+
+"Set go specific stuff
+nnoremap <Leader>gob :GoBuild<CR>
+nnoremap <Leader>goi :GoInstall<CR>
+let g:go_fmt_command = "gofmt"

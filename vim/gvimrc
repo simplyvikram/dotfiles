@@ -2,6 +2,7 @@
 colorscheme gruvbox
 set background=dark
 set guifont=Inconsolata-dz:h14
+"set guifont=mplus-1c-regular:h14
 
 autocmd VimEnter * NERDTree
 autocmd VimEnter * wincmd p
