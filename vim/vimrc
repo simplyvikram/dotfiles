@@ -38,6 +38,7 @@ Plugin 'fatih/vim-go'
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'ervandew/supertab'
 Plugin 'dkprice/vim-easygrep'
+Plugin 'Lokaltog/vim-easymotion'
 " All of your Plugins must be added before the following line
 
 call vundle#end()            " required
@@ -98,22 +99,49 @@ set statusline +=%1*%4v\ %*             "virtual column number
 set statusline +=%2*0x%04B\ %*          "character under cursor
 
 
+
+
 "Moving lines up and down
+" Alt-h  ˙
+" Alt-j  ∆
+" Alt-k  ˚
+" Alt-l  ¬
 " Normal mode
-nnoremap <C-j> :m .+1<CR>==
-nnoremap <C-k> :m .-2<CR>==
+nnoremap ∆ :m .+1<CR>==
+nnoremap ˚ :m .-2<CR>==
 " Insert mode
-inoremap <C-j> <ESC>:m .+1<CR>==gi
-inoremap <C-k> <ESC>:m .-2<CR>==gi
+inoremap ∆ <ESC>:m .+1<CR>==gi
+inoremap ˚ <ESC>:m .-2<CR>==gi
 " Visual mode
-vnoremap <C-j> :m '>+1<CR>gv=gv
-vnoremap <C-k> :m '<-2<CR>gv=gv
+vnoremap ∆ :m '>+1<CR>gv=gv
+vnoremap ˚ :m '<-2<CR>gv=gv
 
 set nobackup
 set noswapfile
+
+
+
+" Moving between windows
+map <c-h> <c-w>h
+map <c-j> <c-w>j
+map <c-k> <c-w>k
+map <c-l> <c-w>l
+
+" Hightlight the cursor line
+autocmd WinEnter * setlocal cursorline
+autocmd WinLeave * setlocal nocursorline
+
+
+" setglobal relativenumber
+" Toggle between line numbers and relative line numbers
+
 
 
 "Set go specific stuff
 nnoremap <Leader>gob :GoBuild<CR>
 nnoremap <Leader>goi :GoInstall<CR>
 let g:go_fmt_command = "gofmt"
+
+
+"Custom settings
+so ~/.vim/settings.vim
