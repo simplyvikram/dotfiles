@@ -39,6 +39,8 @@ Plugin 'Valloric/YouCompleteMe'
 Plugin 'ervandew/supertab'
 Plugin 'dkprice/vim-easygrep'
 Plugin 'Lokaltog/vim-easymotion'
+Plugin 'othree/html5.vim'
+Plugin 'pangloss/vim-javascript'
 " All of your Plugins must be added before the following line
 
 call vundle#end()            " required
